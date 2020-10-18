@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+  {% load static %}
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="{% static 'basic.css'%}">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      <script src="{% static 'quiz.js' %}" charset="utf-8"></script>
+      <title></title>
+    </head>
+    <body>
+
+              <div class="nav-wrapper ">
+                      <div class="left-side">
+                          <div class="brand">
+                            <a href="{% url 'problems:home'%}">Travel Buddy</a>
+                          </div>
+                      </div>
+                      <div class="right-side">
+                          <div class="nav-link-wrapper">
+                              <a href="{% url 'problems:home' %}">Home</a>
+                          </div>
+                      </div>
+              </div>
+
+
+            {% block content %}
+            {% endblock content%}
+    </body>
+        </html>

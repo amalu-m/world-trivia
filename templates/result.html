@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content%}
+          <div align= 'center'>
+
+
+          <h4>Your score is {{result}} out of {{total}}</h4>
+          {% if result  == total %}
+              <h5>Congratulations!!!!</h5>
+              <br>
+          {%endif%}
+          <h6>Thank you for taking the Quiz </h6>
+          </div>
+{%  endblock%}
