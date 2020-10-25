@@ -51,7 +51,9 @@ body{
   border-bottom: 1px solid black;
 }
 .img-background{
-  height:300px;
+  padding-right: 20px;
+  padding-left: 20px;
+  height: 300px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -74,6 +76,8 @@ body{
 }
 
 .portfolio-items-wrapper{
+  padding-left: 20px;
+  padding-right: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -101,17 +105,10 @@ p,h5{
     height: 20px;
     width: 50px;
 }
-.ui-autocomplete {
 
-            width: 200px;
-            height:50px;
-            background-color: white;
-            padding: 0 0.6rem;
-            font-family: 'ptmono';
-          }
 
 .ui-menu-item .ui-menu-item-wrapper.ui-state-active {
-    background: #6693bc !important;
+    background: rgb(195, 195, 195) !important;
     font-weight: bold !important;
     color: #ffffff !important;
 }
@@ -119,9 +116,6 @@ p,h5{
     display:none !important;
 }
 
-ul.ui-autocomplete {
-    list-style: none;
-}
 
 img{
   height: 200px;
@@ -130,12 +124,15 @@ img{
 }
 
 .questionsposition{
+  border-top: 10px;
+  border-bottom: 10px;
   display: grid;
   justify-content: center;
   align-items: center;
 }
 
 #question{
+  max-width: 700px;
   font-style: normal;
   padding:  15px;
   font-size: 25px;
@@ -147,9 +144,8 @@ img{
   font-style: normal;
   font-size: 20px;
   font-family: serif;
-  padding: 10px;
+  padding: 15px;
   font-weight: 300;
-
 }
 
 .buttonstyle{
@@ -166,9 +162,19 @@ img{
 }
 
 #buttonposition{
-  padding-right: 500px;
-  float: right;
+  display: grid;
+  justify-content: center;
 
+
+}
+
+input[type='radio']{
+   margin-right: 20px;
+}
+
+.greenClass style{
+
+  color: red;
 }
 
 .sorrypage{

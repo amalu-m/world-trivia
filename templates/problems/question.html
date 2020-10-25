@@ -5,31 +5,35 @@
 
           <img src="../static/images/nature.jpeg" alt="">
           <div class="questionsposition">
-                    <div id = "question"><h3>{{question.Title}}</h3></div>
+                    <div id = "question"><h3>{{question.title}}</h3></div>
                   <div class="options">
-                          <form  action ="{% url 'problems:question'%}" method="GET">
+                          <form id="myselection" action ="{% url 'problems:question'%}" method="GET">
                                 {% for item in answer %}
-                                    <h5><input id = "option1" type="radio" name="marked answer" value="{{ item.Option1}}">
-                                    <label for="option1">{{ item.Option1}}</label></h5>
-                                    <h5><input id = 'option2' type="radio" name="marked answer" value="{{ item.option2}}">
-                                    <label for="option2">{{ item.option2}}</label></h5>
-                                    <h5><input  id = 'option3' type="radio" name="marked answer" value="{{ item.Option3}}">
-                                    <label for="option3">{{ item.Option3}}</label></h5>
-                                    <h5><input id = 'option4' type="radio" name="marked answer" value="{{ item.Option4}}">
-                                    <label for="option4">{{ item.Option4}}</label></h5>
+                                    <h5><input id = "option1" type="radio" name="markedAnswer" value="A">
+                                    <label for="option1"> {{item.option1}}</label></h5>
+                                    <h5><input id = 'option2' type="radio" name="markedAnswer" value="B">
+                                    <label for="option2"> {{ item.option2}}</label></h5>
+                                    <h5><input  id = 'option3' type="radio" name="markedAnswer" value="C">
+                                    <label for="option3"> {{ item.option3}}</label></h5>
+                                    <h5><input id = 'option4' type="radio" name="markedAnswer" value="D">
+                                    <label for="option4"> {{ item.option4}}</label></h5>
                                   {%endfor%}
 
                   </div>
               </div>
-                                          {% csrf_token%}
+
                                     <div id ='buttonposition'>
+                                        <h6>{{total_questions_show}}/{{request.session.total_question}}</h6>
                                       {% if  request.session.pending_questions_count  != 0 %}
                                           <button  id = "next" class="buttonstyle" type="text" name="item" value = {{request.session.country_id}} >next</button>
                                       {% else%}
                                           <button  class="buttonstyle"type="text" name="item" value = {{request.session.country_id}} >submit</button>
                                       {%endif%}
+
                                     </div>
                             </form>
+
+
 
 
 

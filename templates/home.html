@@ -13,13 +13,9 @@
                             <form class="" action ="{% url 'problems:question'%}" method="GET" autocomplete="off">
 
                           <div class = "form-group" >
-
                              {% csrf_token %}
-                            <input type="text" id='id_input' name ='search_item' class ='form-control form-control-lg' placeholder= 'your next travel destination'>
-                            <input type="hidden" id = 'hidden_input' name="item" value="">
-
-
-
+                            <input type="text" id='id_input' name ='item' class ='form-control form-control-lg' placeholder= 'Enter your next travel destination'>
+                            <div role='listbox' class= 'removable'>  </div>
                           </div>
 
                             </form>
@@ -29,7 +25,7 @@
                       </div>
 
 
-
+          <br>
           <div class="container">
 
             <p>The Earth is a wellspring of amazing places and fascinating cultures. It is such a shame that we only have one life to explore everything that's out there. There is a bundle of new experiences, feelings and human behaviors waiting just behind the door. Pack your things and go with the flow. It will take you far, far away, it will bring the real you to the surface, it will completely change your life.</p>

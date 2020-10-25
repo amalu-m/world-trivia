@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'quiz.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'holidays',
+        'NAME': 'holiday_destinations',
         'USER': base.DB_USER,
         'PASSWORD': base.DB_PASSWORD,
         'HOST': '127.0.0.1',
