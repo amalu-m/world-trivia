@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'quiz.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'holiday_destinations',
+        'NAME': 'amalulinto$holiday_destinations',
         'USER': base.DB_USER,
         'PASSWORD': base.DB_PASSWORD,
-        'HOST': 'localhost',
+        'HOST': 'amalulinto.mysql.pythonanywhere-services.com',
         'PORT': '3306',
         'OPTIONS': {'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'"}
 
