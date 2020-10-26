@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'holiday_destinations',
         'USER': base.DB_USER,
         'PASSWORD': base.DB_PASSWORD,
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'"}
 
