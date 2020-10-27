@@ -25,7 +25,7 @@ SECRET_KEY = base.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.pythonanywhere.com']
+ALLOWED_HOSTS = ['amalulinto.pythonanywhere.com']
 
 
 # Application definition
