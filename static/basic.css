@@ -73,6 +73,7 @@ body{
   justify-content: center;
   flex-direction: column;
   display: flex;
+  margin-left: 15px;
 }
 
 .portfolio-items-wrapper{
@@ -108,7 +109,7 @@ p,h5{
 
 
 .ui-menu-item .ui-menu-item-wrapper.ui-state-active {
-    background: rgb(195, 195, 195) !important;
+    background: #1f90d1 !important;
     font-weight: bold !important;
     color: #ffffff !important;
 }
@@ -120,7 +121,6 @@ p,h5{
 img{
   height: 200px;
   width: 1400px;
-
 }
 
 .questionsposition{
@@ -164,8 +164,6 @@ img{
 #buttonposition{
   display: grid;
   justify-content: center;
-
-
 }
 
 input[type='radio']{
@@ -173,7 +171,6 @@ input[type='radio']{
 }
 
 .greenClass style{
-
   color: red;
 }
 
