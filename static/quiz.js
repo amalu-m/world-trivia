@@ -22,7 +22,7 @@ $(function(){
                 $("#myselection input[type=radio]").attr('disabled',true);
                 var elements = document.querySelectorAll("#myselection input[type=radio]")
                 for (var i = 0, element; element = elements[i++];) {
-                    if (element.checked && element.value === response.answerKey) {
+                    if ((element.checked && element.value === response.answerKey)||(element.value === response.answerKey)){
                       element.labels[0].style["color"] = "#36eb69";
                     } else if (element.checked) {
                       element.labels[0].style["color"] = "red";
