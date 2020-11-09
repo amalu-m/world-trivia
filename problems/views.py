@@ -24,7 +24,6 @@ def autocomplete(request):
         clearSession(request)
     return JsonResponse(countries, safe=False)
 
-
 class homePage(TemplateView):
     template_name = 'home.html'
 
@@ -67,7 +66,6 @@ def QuestionList(request):
              return render(request, 'problems/question.html',context)
 
      else:
-        # pdb.set_trace()
         context = {
         'question' : Question.objects.filter(country = request.session['country_id']).exclude(id__in = request.session['user_attended_questions'] ).first()
          }
