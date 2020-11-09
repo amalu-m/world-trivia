@@ -10,8 +10,7 @@
             <form action ="{% url 'problems:question'%}" method="GET" autocomplete="off">
                 <div class = "form-group">
                 {% csrf_token %}
-              <input type="text" id='id_input' name ='search_item' class ='form-control form-control-lg' placeholder= 'your next travel destination'>
-              <input type="hidden" id ='hidden_input' name="item" >
+              <input type="text" id='id_input' name ='item' class ='form-control form-control-lg' placeholder= 'your next travel destination'>
                 </div>
             </form>
               </div>
