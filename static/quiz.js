@@ -3,6 +3,7 @@ $(function(){
     $("#id_input").autocomplete({
       source: '/autocomplete/',
       minLength: 2,
+      delay: 0,
       select: function (event, ui) {
                 // event.preventDefault()
                 $("#id_input").val(ui.item.label);

@@ -11,11 +11,8 @@ import pdb
 class CountryModel():
     def __init__(self,name):
         self.label = name
-        # self.value = id
 
-# Create your views here.
 def autocomplete(request):
-
     if 'term' in request.GET:
         queryset = Country.objects.filter(name__istartswith=request.GET.get('term',None))
         countries =list()
@@ -31,35 +28,27 @@ def autocomplete(request):
 class homePage(TemplateView):
     template_name = 'home.html'
 
-
 def QuestionList(request):
-     # pdb.set_trace()
      if request.is_ajax():
          correctAnswer = request.session['check']
          if request.GET.get('clicked') == request.session['check']:
             request.session['correct_answer_count'] += 1
-
          return JsonResponse({'answerKey':correctAnswer},status = 200)
-
 
      if 'country_id' not in request.session:
          search_item = request.GET.get('item')
          request.session['item'] =search_item
          search_destination = Country.objects.filter(name= search_item)
 
-         if len(search_destination) == 0 :
+         if len(search_destination) == 0:
               context = {
                'reply' : 'Sorry not available'
                }
               return render(request,'sorry.html',context)
          request.session['country_id']= Country.objects.filter(name = search_item).values('id')[0]['id']
 
-
-     if request.method == 'GET':
-
-         if 'user_attended_questions' not in request.session :
+         if 'user_attended_questions' not in request.session:
              context = {
-
                 'question' :Question.objects.filter(country = request.session['country_id']).first()
              }
              total_question = Question.objects.filter(country =request.session['country_id']).count()
@@ -77,28 +66,28 @@ def QuestionList(request):
              context['total_questions_show'] = len(request.session['user_attended_questions'])
              return render(request, 'problems/question.html',context)
 
-         else:
-            context = {
-            'question' : Question.objects.filter(country = request.session['country_id']).exclude(id__in = request.session['user_attended_questions'] ).first()
-             }
-            if context['question'] is None:
-                total = len(request.session['user_attended_questions'])
-                result = request.session['correct_answer_count']
-                context['result'] = result
-                context['total'] = total
-                clearSession(request)
-                return render(request,'result.html',context)
+     else:
+        # pdb.set_trace()
+        context = {
+        'question' : Question.objects.filter(country = request.session['country_id']).exclude(id__in = request.session['user_attended_questions'] ).first()
+         }
+        if context['question'] is None:
+            total = len(request.session['user_attended_questions'])
+            result = request.session['correct_answer_count']
+            context['result'] = result
+            context['total'] = total
+            clearSession(request)
+            return render(request,'result.html',context)
 
-
-            request.session['current_question_id'] = context['question'].id
-            request.session['user_attended_questions'].append(context['question'].id)
-            answer = Answer.objects.filter(question =context['question'].id)
-            for ans in answer:
-               request.session['check'] = ans.correct
-            request.session['pending_questions_count'] -= 1
-            context['answer'] = answer
-            context['total_questions_show'] = len(request.session['user_attended_questions'])
-            return render(request, 'problems/question.html',context)
+        request.session['current_question_id'] = context['question'].id
+        request.session['user_attended_questions'].append(context['question'].id)
+        answer = Answer.objects.filter(question =context['question'].id)
+        for ans in answer:
+           request.session['check'] = ans.correct
+        request.session['pending_questions_count'] -= 1
+        context['answer'] = answer
+        context['total_questions_show'] = len(request.session['user_attended_questions'])
+        return render(request, 'problems/question.html',context)
 
 
 def clearSession(request):
