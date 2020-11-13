@@ -1,8 +1,6 @@
 {% extends 'base.html'%}
 {% load static %}
-
 {% block content%}
-
           <img src="../static/images/nature.jpeg" alt="">
           <div class="questionsposition">
                     <div id = "question"><h3>{{question.title}}</h3></div>
@@ -18,10 +16,8 @@
                                     <h5><input id = 'option4' type="radio" name="markedAnswer" value="D">
                                     <label for="option4"> {{ item.option4}}</label></h5>
                                   {%endfor%}
-
                   </div>
               </div>
-
                                     <div id ='buttonposition'>
                                         <h6>{{total_questions_show}}/{{request.session.total_question}}</h6>
                                       {% if  request.session.pending_questions_count  != 0 %}
@@ -29,13 +25,6 @@
                                       {% else%}
                                           <button  class="buttonstyle"type="text" name="item" value = {{request.session.country_id}} >submit</button>
                                       {%endif%}
-
                                     </div>
                             </form>
-
-
-
-
-
-
 {%endblock%}

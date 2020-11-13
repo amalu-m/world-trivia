@@ -1,12 +1,8 @@
 {% extends 'base.html'%}
 {% load static %}
-
-    {% block content%}
-
+{% block content%}
         <div class="container">
-
           <div class = 'col-md-6 m-auto'>
-
             <form action ="{% url 'problems:question'%}" method="GET" autocomplete="off">
                 <div class = "form-group">
                 {% csrf_token %}
@@ -14,14 +10,9 @@
                 </div>
             </form>
               </div>
-
-
-
       <h5 align = 'center'>  No search results for {{request.session.search_item}}</h5>
       <div align= 'center'>
       <img class= 'sorrypage' src="../static/images/calm.jpeg" alt="">
         </div>
     </div>
-
-
   {%endblock%}
